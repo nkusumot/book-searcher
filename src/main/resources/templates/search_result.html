@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>search_result</title>
+    <meta content="search_result" name="page-name">
+</head>
+<h1>Search Result</h1>
+
+<table>
+    <tbody>
+    <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Authors</th>
+        <th>Publisher</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td>
+            <h4 th:text="${item.volumeInfo.title}"></h4>
+        </td>
+        <td>
+            <th:block th:if="${item.volumeInfo.imageLinks != null}">
+                <img th:src="${item.volumeInfo.imageLinks.smallThumbnail}">
+            </th:block>
+
+        </td>
+
+        <td>
+            <th:block th:each="author : ${item.volumeInfo.authors}">
+                <p th:text="${author}"></p>
+            </th:block>
+        </td>
+        <td>
+            <p th:text="${item.volumeInfo.publisher}"></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<body>
+
+</body>
+</html>

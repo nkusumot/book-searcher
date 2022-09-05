@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta content="index" name="page-name">
+</head>
+<body>
+    <h1>Book Search</h1>
+
+    <form method="get" th:action="@{/search_result}">
+        <p>検索したいキーワードを入力してください。</p>
+        <input type="text" name="query" placeholder="キーワードを入力">
+        <button type="submit" name="submit" value="検索">検索</button>
+    </form>
+
+</body>
+</html>
